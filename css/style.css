@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+
+:root{
+    --margin: 150px;
+    --font: 'Space Grotesk', sans-serif;
+    --primary: #fff;
+    --secondery: #4ce19e;
+    --error: #ff6f5c;
+}
+*{
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+
+    overflow-x: hidden;
+    height: 100vh;
+    font-family: var(--font);
+    background-color: #141414;
+}
+body>*{
+    margin: 0 var(--margin);
+}
+a{
+    text-decoration: none;
+}
+.image{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    width: 450px;
+    height: 700px;
+    background-color: #242424;
+    overflow: hidden;
+    margin-right: 150px;
+    align-items: flex-end;
+    z-index: 0;
+}
+.image img{
+    position: relative;
+    transform: translateX(30px);
+    width: 600px;
+    filter: grayscale(100%);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    padding: 50px 0;
+}
+header .logo{
+    font-family: var(--font);
+    color: var(--secondery);
+}
+header .icons >*{
+    margin-right: 40px;
+    transition-duration: 0.3s;
+}
+header .icons{
+    font-size: 30px;
+    color: var(--primary);
+    cursor: pointer;
+}
+header .icons a{
+    color: var(--primary);
+}
+header .icons a:hover{
+    color: var(--secondery);
+}
+
+
+
+section.pref h1{
+    position: relative;
+    color: var(--primary);
+    font-size: 80px;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+
+    margin-bottom: 30px;
+}
+section.pref h1 span{
+    text-decoration: underline var(--secondery);
+}
+section.pref p{
+    color: #ffffff6d;
+    font-size: 20px;
+    width: 400px;
+    margin-bottom: 40px;
+}
+
+.break{
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 100px;
+}
+
+.contact{
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;;
+    color: var(--primary);
+    background-color: transparent;
+
+    height: 50px;
+    border-bottom: 4px solid var(--secondery);
+
+    transition-duration: 0.4s;
+}
+.contact:hover{
+    color: var(--secondery);
+}
+.break img{
+    position: absolute;
+    transform: translateX(600px);
+}
+
+
+section.experience{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-bottom: 200px;
+}
+section.experience h1{
+    font-size: 50px;
+    color: var(--primary);
+
+}
+section.experience h5{
+    color: #ffffff59;
+}
+
+
+section.projects .label{
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+section.projects .label h1{
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--primary);
+
+}
+section.projects .portfolio .cont .project-image{
+    width: 500px;
+    height: 400px;
+    transition-duration: 0.4s;
+}
+section.projects .portfolio .cont img{  /*.project-image*/
+    width: 500px;
+    height: 400px;
+    object-fit: cover;
+}
+
+section.projects .portfolio .cont .project-image .image-button{
+    height: 100px;
+    background-color: transparent;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+section.projects .portfolio .cont .project-image::before{
+    content:"";
+    position: absolute;
+    z-index: 1;
+    width: 500px;
+    height: 400px;
+    /* transition-duration: 0.4s; */
+    background-color: transparent;
+    cursor: pointer;
+    
+    transition: background-color .4s;
+}
+section.projects .portfolio .cont .project-image:hover .image-button{
+    opacity: 1;
+}
+section.projects .portfolio .cont .project-image:hover::before{
+    background-color: hsla(0, 0%, 8%, .7);
+}
+
+
+
+
+
+section.projects .portfolio{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    row-gap: 50px;
+
+    text-transform: uppercase;
+    position: relative;
+}
+section.projects .portfolio h1{
+    font-weight: 700;
+    color: var(--primary);
+
+    margin: 20px 0 10px 0;
+}
+section.projects .portfolio .lang{
+    display: flex;
+    justify-content: start;
+
+    color: #ffffff49;
+    gap: 20px;;
+}
+
+
+footer{
+    margin: 0;
+    padding-top: 80px;
+    background-color: #242424;
+    color: #fff;
+}
+footer>*{
+    margin: 0 200px;
+}
+footer .message{
+    display: flex;
+    justify-content: space-between;
+}
+footer .message .words h1{
+    font-size: 75px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+footer .message .words p{
+    width: 500px;
+    color: #ffffff90;
+    font-size: 20px;
+    font-weight: 500;
+}
+footer .message .input form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+footer .message .input input,textarea{
+    width: 400px;
+    
+    font-size: 20px;
+    color: var(--primary);
+    background-color: transparent;
+    
+    /* border-style: */
+    border-bottom: 1px solid white;
+
+    padding: 0 0 20px 20px;
+    margin-bottom: 30px;
+}
+footer .message .input h5{
+    display: none;
+    font-size: 12px;
+    color: var(--error);
+
+    margin-bottom: 20px;
+}
+
+
+.line{
+    height: 1px;
+    border: 2px solid #fff;
+    margin: 50px var(--margin);
+}
